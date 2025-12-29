@@ -58,8 +58,13 @@ export TOKENIZER_PATH="/data/share/C4_llama3_8b/llama3_1_8b_tokenizer"
 #     which is the "actual checkpoint". 
 #     Notice that this path must be able to hold at least 5.2TB data since each checkpoint is 5.2TB. 
 export CONTINUAL_CKPT="/data/share/C4_llama3_8b/saved_ckpts"
+
+export USE_CKPT=0
+# Model: Whether we are resuming from a NeMo-formatted HuggingFace checkpoint (weights only). 
+#     If set to 1, then checkpoint resuming code will not try to load the optimizer states. 
+export FROM_HF=0
 # Model: Whether we want to save a checkpoint. Must be 1 if NPAR > 1. If 1, then we save a checkpoint at the end.
-export SAVE_CKPT=0
+export SAVE_CKPT=1
 
 # Training Configs: 
 # Model: size, to choose from 8b, 70b, 405b
